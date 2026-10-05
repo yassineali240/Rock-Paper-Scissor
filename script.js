@@ -10,7 +10,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let humanChoice = prompt("enter your hame choice");
+  let humanChoice = prompt("enter your game choice");
   let HumanChoiceLowerCase = humanChoice.toLowerCase();
   return HumanChoiceLowerCase;
 }
@@ -38,9 +38,9 @@ function playRound(humanChoice, computerChoice) {
       `computer choose ${computerChoice}, you lose. your score ${humanScore} computer score ${computerScore}`,
     );
   } else if (humanChoice === "scissor" && computerChoice === "rock") {
-    humanScore++;
+    computerScore++;
     console.log(
-      `computer choose ${computerChoice}, you won. your score ${humanScore} computer score ${computerScore}`,
+      `computer choose ${computerChoice}, you lose. your score ${humanScore} computer score ${computerScore}`,
     );
   } else if (humanChoice === "scissor" && computerChoice === "paper") {
     humanScore++;
@@ -64,13 +64,13 @@ function playGame() {
 }
 function checkFinalScore() {
   if (computerScore > humanScore) {
-    console.log("computer won, better luck next time");
+    console.log("computer won, better luck next time!");
   } else if (humanScore > computerScore) {
-    console.log("wohhoo you won");
+    console.log("wohhoo you won!");
   } else {
-    console.log("its a tie");
+    console.log("its a tie!");
   }
 }
 playGame();
-console.log(humanScore, computerScore);
+console.log(`(human-score ${humanScore} ${computerScore} computer-score)`);
 checkFinalScore();
